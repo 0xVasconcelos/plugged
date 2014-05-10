@@ -4,8 +4,6 @@ if(empty($auth)) {
     die();
 }
 
-echo ""."<script>var y='';</script>";
-
 	
 
 ?>
