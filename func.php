@@ -16,13 +16,11 @@ $Stats            = mysql_query("SELECT * FROM `userhistory` ORDER BY id DESC LI
 $RoomStats        = mysql_fetch_array($Stats);
 $UsersOnlineCount = $RoomStats[1];
 
-$result           = mysql_query("SELECT id FROM `videohits` ORDER BY id DESC LIMIT 1");
-$PlayedVideoCount = mysql_fetch_array($result);
-$PlayedVideoCount = $PlayedVideoCount['0'];
+$result           = mysql_query("SELECT id FROM `videohits`");
+$PlayedVideoCount = mysql_num_rows($result);
 
-$result         = mysql_query("SELECT id FROM `videos` ORDER BY id DESC LIMIT 1");
-$PlayVideoCount = mysql_fetch_array($result);
-$PlayVideoCount = $PlayVideoCount['0'];
+$result         = mysql_query("SELECT id FROM `videos`");
+$PlayVideoCount = mysql_num_rows($result);
 
 $result             = mysql_query("SELECT SUM(positive) as SOMA FROM videohits");
 $PositiveVideoCount = mysql_fetch_assoc($result);
