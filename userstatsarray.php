@@ -9,6 +9,7 @@ $user = $_GET['user'];
 
 
 $result = mysql_query("SELECT * FROM users WHERE user='$user' ORDER BY id");
+
 while ($row = mysql_fetch_array($result)) {
     echo "{\"users\":[
         {
@@ -18,6 +19,16 @@ while ($row = mysql_fetch_array($result)) {
             \"negative\":\"" . $row['negative'] . "\",
             \"curates\":\"" . $row['curates'] . "\"
 }]}";
+}
+if(!mysql_fetch_array($result)){
+
+    echo "{\"users\":[
+        {
+            \"exists\":\"false\"
+         
+}]}";
+
+
 }
 
 

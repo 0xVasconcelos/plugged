@@ -131,6 +131,9 @@ else {
 	elseif ($_GET['s']=="em") { 
 		MoreNegativeUniqueList();		
 	}
+	elseif ($_GET['s']=="h") { 
+		GetLastPlayed();		
+	}
 	else { 
 		MorePlayedList();
 	}	

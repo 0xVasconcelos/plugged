@@ -42,10 +42,23 @@ $DJCount = $DJCount['SOMA'];
 
 
 function GetLastPlayed() {
-                
-                
-                
-                $result = mysql_query("SELECT * FROM videos ORDER BY id DESC LIMIT 20");
+	echo "<table class='table table-bordered table-hover'>
+
+								<thead>
+									<tr>
+										<th>Título</th>
+										<th>Tocado por</th>
+										<th><span class='label label-success'>Legal</span></th>
+										<th><span class='label label-info'>Add</span></th>
+										<th><span class='label label-important'>Chato</span></th>
+										<th>Horário | DJ's online</th>
+
+									</tr>
+								</thead>
+								<tbody>
+								<h2><span class='awe-star'></span> Últimas tocadas</h2>";
+
+                $result = mysql_query("SELECT * FROM videos ORDER BY id DESC LIMIT 200");
                 while ($row = mysql_fetch_array($result)) {
                                 echo "<tr>
                                         <td>" . $row['name'] . "-" . $row['author'] . "</td>
@@ -55,8 +68,51 @@ function GetLastPlayed() {
                                         <td>" . $row['negative'] . "</td>
                                         <td>" . gmdate("H:i:s d/m/y", $row['time'] - 10800) . "</td>
                                         <td>" . $row['counter'] . "</td>
-                                    </tr>";
+                                    </tr>";}
+
+echo "
+                                    </tbody>
+							</table>
+
+				</div>";
                 }
+function GetPlayedHistory() {
+		echo "<table class='table table-bordered table-hover'>
+
+								<thead>
+									<tr>
+										<th>Título</th>
+										<th>Tocado por</th>
+										<th><span class='label label-success'>Legal</span></th>
+										<th><span class='label label-info'>Add</span></th>
+										<th><span class='label label-important'>Chato</span></th>
+										<th>Horário | DJ's online</th>
+
+									</tr>
+								</thead>
+								<tbody>
+								<h2><span class='awe-star'></span> Últimas tocadas</h2>";
+               
+                
+                
+                $result = mysql_query("SELECT * FROM videos ORDER BY id DESC LIMIT 50");
+                while ($row = mysql_fetch_array($result)) {
+                                echo "<tr>
+                                        <td>" . $row['name'] . "-" . $row['author'] . "</td>
+                                        <td>" . $row['user'] . "</td>
+                                        <td>" . $row['positive'] . "</td>
+                                        <td>" . $row['curates'] . "</td>
+                                        <td>" . $row['negative'] . "</td>
+                                        <td>" . gmdate("H:i:s d/m/y", $row['time'] - 10800) . "</td>
+                                        <td>" . $row['counter'] . "</td>
+                                    </tr>";}
+
+                                    echo "
+                                    </tbody>
+							</table>
+
+				</div>";
+                
 }
 function MorePlayedList() {
                 echo "<table class='table table-bordered table-hover'>

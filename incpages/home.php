@@ -4,8 +4,6 @@ if(empty($auth)) {
     die();
 }
 
-	
-
 ?>
 <!-- Right (content) side -->
 			<section class="content-block" role="main">
@@ -100,27 +98,11 @@ Facebok: http://facebook.com<br>
 					<!-- /Data block -->
 					
 
-					<table class="table table-bordered table-hover">
+				
+<?php GetPlayedHistory(); ?>
+							
 
-								<thead>
-									<tr>
-										<th>Título</th>
-										<th>Tocado por</th>
-										<th><span class='label label-success'>Legal</span></th>
-										<th><span class="label label-info">Add</span></th>
-										<th><span class='label label-important'>Chato</span></th>
-										<th>Horário | DJ's online</th>
-
-									</tr>
-								</thead>
-								<tbody>
-								<h2><span class="awe-star"></span> Últimas tocadas</h2>
-<?php GetLastPlayed(); ?>
-								</tbody>
-							</table>
-
-				</div>
-					
+									
 				
 			
 			

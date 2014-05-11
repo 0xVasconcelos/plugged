@@ -159,7 +159,7 @@ if(empty($auth)) {
 						</li>
 
 
-						<li><a href="#" class="no-submenu"><span class="fam-text-padding-left"></span>Lista de DJ's</a></li>
+						<li><a href="?p=t&s=h" class="no-submenu"><span class="fam-text-padding-left"></span>Histórico da sala</a></li>
 						<li><a href="#" class="no-submenu"><span class="fam-cog"></span>ITEM 1</a></li>
 						<li><a href="#" class="no-submenu"><span class="fam-heart"></span>ITEM 2</a></li>
 						<li>
