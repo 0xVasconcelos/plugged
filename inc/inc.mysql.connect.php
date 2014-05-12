@@ -1,5 +1,5 @@
 <?php
-e_once "inc/inc.db.php";
+include_once "inc/inc.db.php";
 
 $a=mysql_connect($host,$user,$pass);
 	if (!$a){
