@@ -1,9 +1,4 @@
 <?php
-/* PLUG.GED 0.1 
-Sistema de gerenciamento para plug.dj.
-Criado por Lucas Vasconcelos(@lucaslg26)
-Com a ajuda de Luiz Eduardo(@Caipira).
-*/
 if (empty($auth)) {
                 header("location:/index.php");
                 die();
